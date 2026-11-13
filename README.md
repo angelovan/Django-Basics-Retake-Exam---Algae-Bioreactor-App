@@ -1,7 +1,52 @@
 # Algae-Bioreactor-App
-Algae Bioreactor App
 
-A Django web application designed for students and teachers to create algae bioreactor units, track equipment, and manage feeding schedules. The application uses 3 different algae strains.
+Algae Bioreactor Management App
+
+A Django web application designed for students and teachers for managing algae bioreactors, algae strains, laboratory equipment, and nutrient feeding schedules.
+
+## Prerequisites
+- **Python 3.13.5** (or compatible Python 3.13+ version)
+- **pip** (Python package installer)
+
+## Installation & Setup
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/angelovan/Django-Basics-Retake-Exam---Algae-Bioreactor-App.git
+   cd Django-Basics-Retake-Exam---Algae-Bioreactor-App
+   ```
+
+2. **Create and activate a virtual environment:**
+   - On Windows:
+     ```bash
+     python -m venv venv
+     venv\Scripts\activate
+     ```
+   - On macOS / Linux:
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+
+3. **Install the required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Apply database migrations:**
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Run the development server:**
+   ```bash
+   python manage.py runserver
+   ```
+
+6. **Access the application:**
+   Open your web browser and navigate to `http://127.0.0.1:8000/`.
 
 ## Features
 - **Bioreactor Management:** Users can register or update individual bioreactor units, cabinet (classroom) locations, setup dates, and observation notes.
