@@ -17,7 +17,11 @@ class NutrientFeed(models.Model):
 
     def save(self, *args, **kwargs):
         if self.completed_date:
-            self.due_date = self.completed_date + timedelta(days=7)
+            self.is_completed = True
+            interval_days = 7
+            if self.bioreactor and self.bioreactor.algae_species:
+                interval_days = self.bioreactor.algae_species.feed_interval_days
+            self.due_date = self.completed_date + timedelta(days=interval_days)
 
         super().save(*args, **kwargs)
 

@@ -9,6 +9,28 @@
         <a href="{% url 'bioreactor_create' %}" class="btn btn-success">New Bioreactor</a>
     </div>
 
+    <form method="get" class="row g-2 mb-4">
+        <div class="col-md-5">
+            <input type="text" name="search" class="form-control"
+                   placeholder="Search by unit name, location, or algae strain..."
+                   value="{{ request.GET.search }}">
+        </div>
+        <div class="col-md-4">
+            <select name="sort" class="form-select">
+                <option value="">Sort by...</option>
+                <option value="name" {% if request.GET.sort == 'name' %}selected{% endif %}>Name (A–Z)</option>
+                <option value="newest" {% if request.GET.sort == 'newest' %}selected{% endif %}>Setup Date (Newest First)</option>
+                <option value="oldest" {% if request.GET.sort == 'oldest' %}selected{% endif %}>Setup Date (Oldest First)</option>
+            </select>
+        </div>
+        <div class="col-md-3 d-flex gap-2">
+            <button type="submit" class="btn btn-primary w-100">Apply</button>
+            {% if request.GET.search or request.GET.sort %}
+                <a href="{% url 'bioreactor_list' %}" class="btn btn-outline-secondary">Reset</a>
+            {% endif %}
+        </div>
+    </form>
+
     <div class="row">
         {% for bioreactor in bioreactors %}
             <div class="col-md-4 mb-3">
@@ -19,7 +41,6 @@
                         <p class="card-text"><strong>Algae Strain:</strong> {{ bioreactor.algae_species.name }}</p>
                         <p class="card-text"><strong>Installed Equipment:</strong> {{ bioreactor.equipment.all|join:", " }}</p>
                         <p class="card-text"><strong>Setup Date:</strong> {{ bioreactor.setup_date }}</p>
-
 
                         <hr>
 
@@ -34,7 +55,11 @@
         {% empty %}
             <div class="col-12">
                 <div class="alert alert-warning text-center">
-                    No bioreactor units created yet. Click <strong>"Add New Bioreactor"</strong> above to get started.
+                    {% if request.GET.search %}
+                        No bioreactor units found matching "<strong>{{ request.GET.search }}</strong>".
+                    {% else %}
+                        No bioreactor units created yet. Click <strong>"New Bioreactor"</strong> above to get started.
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
