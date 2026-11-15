@@ -75,14 +75,14 @@ Follow these steps to set up and run the project locally:
 - **Chlorella vulgaris** 
   * *Optimal Conditions:* Temperature 25°C – 30°C | pH 6.5 – 7.5.
   * *Resilience:* Highly resilient. Can survive temperature drops down to 10°C and pH swings from 5.0 to 9.0 without dying.
-  * *Biology:* A unicellular, chlorophyte microalga characterized by its spherical morphology and efficient photosynthetic apparatus. Isolated in 1890, this organism served as a primary model for elucidating the light-independent reactions of photosynthesis.
+  * *Description:* A unicellular, chlorophyte microalga characterized by its spherical morphology and efficient photosynthetic apparatus. Isolated in 1890, this organism served as a primary model for elucidating the light-independent reactions of photosynthesis.
 
 - **Arthrospira platensis (Spirulina)** 
   * *Optimal Conditions:* Temperature 35°C – 38°C | pH 9.0 – 11.0.
   * *Resilience:* High pH acts as a natural shield, preventing contamination from other algae or bacteria in a classroom setting.
-  * *Biology:* A filamentous, multicellular, photosynthetic cyanobacterium colloquially designated as Spirulina.
+  * *Description:* A filamentous, multicellular, photosynthetic cyanobacterium colloquially designated as Spirulina.
 
 - **Scenedesmus obliquus** 
   * *Optimal Conditions:* Temperature 20°C – 28°C | pH 7.0 – 8.0.
   * *Resilience:* Thrives at standard room temperature, making it excellent for cooler classrooms that turn off heating over the weekend.
-  * *Biology:* A highly adaptive freshwater green alga found globally in common ponds, lakes, and puddles, making it a staple organism for ecological studies. Rather than living as single cells, it organizes into distinct, symmetrical colonies called coenobia, where four or eight football-shaped cells align side-by-side like a tiny log raft.
+  * *Description:* A highly adaptive freshwater green alga found globally in common ponds, lakes, and puddles, making it a staple organism for ecological studies. Rather than living as single cells, it organizes into distinct, symmetrical colonies called coenobia, where four or eight football-shaped cells align side-by-side like a tiny log raft.

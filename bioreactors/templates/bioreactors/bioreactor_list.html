@@ -33,9 +33,16 @@
 
     <div class="row">
         {% for bioreactor in bioreactors %}
+
             <div class="col-md-4 mb-3">
                 <div class="card shadow-sm h-100">
                     <div class="card-body">
+                        {% if bioreactor.progress_photo %}
+                        <img src="{{ bioreactor.progress_photo.url }}"
+                             class="card-img-top"
+                             alt="{{ bioreactor.name }}"
+                             style="height: 200px; object-fit: cover;">
+                        {% endif %}
                         <h5 class="card-title text-primary">{{ bioreactor.name }}</h5>
                         <p class="card-text text-muted small">Location: {{ bioreactor.location }}</p>
                         <p class="card-text"><strong>Algae Strain:</strong> {{ bioreactor.algae_species.name }}</p>

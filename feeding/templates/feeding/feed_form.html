@@ -4,14 +4,52 @@
 
 {% block content %}
 <div class="container mt-4" style="max-width: 600px;">
-    <div class="card shadow-sm">
-        <div class="card-header bg-success text-white">
-            <h4 class="mb-0">Add Feeding & Observation Record</h4>
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-bioreactor-header py-3">
+            <h4 class="mb-0 text-cream">Add Feeding & Observation Record</h4>
         </div>
-        <div class="card-body">
-            <form method="post">
+        <div class="card-body bg-white p-4">
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger shadow-sm border-danger" role="alert">
+                    <strong>Feeding Schedule Warning:</strong>
+                    {% for error in form.non_field_errors %}
+                        <p class="mb-0 mt-1">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form method="post" novalidate>
                 {% csrf_token %}
-                {{ form.as_p }}
+
+                <div class="mb-3">
+                    <label for="{{ form.bioreactor.id_for_label }}" class="form-label fw-bold">Bioreactor Unit</label>
+                    {{ form.bioreactor }}
+                    {% if form.bioreactor.errors %}
+                        <div class="text-danger small mt-1">{{ form.bioreactor.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    <label for="{{ form.completed_date.id_for_label }}" class="form-label fw-bold">Feed Completion Date</label>
+                    {{ form.completed_date }}
+                    {% if form.completed_date.errors %}
+                        <div class="text-danger small mt-1">{{ form.completed_date.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="mb-3 form-check">
+                    {{ form.is_completed }}
+                    <label for="{{ form.is_completed.id_for_label }}" class="form-check-label fw-bold">Feed Completed?</label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="{{ form.notes.id_for_label }}" class="form-label fw-bold">Feeding Notes</label>
+                    {{ form.notes }}
+                    {% if form.notes.errors %}
+                        <div class="text-danger small mt-1">{{ form.notes.errors }}</div>
+                    {% endif %}
+                </div>
+
                 <div class="d-flex justify-content-between mt-4">
                     <button type="submit" class="btn btn-success px-4">Save Record</button>
                     <a href="{% url 'feed_list' %}" class="btn btn-secondary px-4">Cancel</a>
