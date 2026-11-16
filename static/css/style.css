@@ -160,7 +160,6 @@ header {
     color: var(--cream);
 }
 
-/* Form Controls */
 .form-control, .form-select {
     border-radius: 7px;
     border: 1px solid #c5bba5;
